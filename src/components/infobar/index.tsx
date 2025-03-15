@@ -2,6 +2,7 @@ import { Book, Headphones, Search } from "lucide-react";
 import { Input } from "../ui/input";
 import { Tooltip, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
 import { TooltipContent } from "@radix-ui/react-tooltip";
+import { UserButton } from "@clerk/nextjs";
 
 
 
@@ -32,6 +33,7 @@ export default function InfoBar(){
                     </TooltipContent>
                 </Tooltip>
             </TooltipProvider>
+            <UserButton></UserButton>
         </div>
     )
 }
