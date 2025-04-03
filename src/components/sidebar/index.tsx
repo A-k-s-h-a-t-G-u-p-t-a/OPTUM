@@ -26,7 +26,7 @@ const MenuOptions = (props: Props) => {
           className="flex font-bold flex-row "
           href="/"
         >
-          optum.
+          optum
         </Link>
         <TooltipProvider>
           {menuOptions.map((menuItem) => (
@@ -47,6 +47,7 @@ const MenuOptions = (props: Props) => {
                       <menuItem.Component
                         selected={pathName === menuItem.href}
                       />
+                      
                     </Link>
                   </li>
                 </TooltipTrigger>
@@ -90,6 +91,7 @@ const MenuOptions = (props: Props) => {
             />
           </div>
         </div>
+
       </div>
       <div className="flex items-center justify-center flex-col gap-8">
         <ModeToggle />

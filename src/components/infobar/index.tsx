@@ -13,6 +13,7 @@ export default function InfoBar(){
                 <Search/>
                 <Input placeholder="Search" className="border-none bg-transparent"/>
             </span>
+            
             <TooltipProvider>
                 <Tooltip delayDuration={0}>
                     <TooltipTrigger>
@@ -23,7 +24,9 @@ export default function InfoBar(){
                     </TooltipContent>
                 </Tooltip>
             </TooltipProvider>
+            
             <TooltipProvider>
+                
                 <Tooltip delayDuration={0}>
                     <TooltipTrigger>
                         <Book/>
@@ -32,6 +35,7 @@ export default function InfoBar(){
                         <p>Guide</p>
                     </TooltipContent>
                 </Tooltip>
+
             </TooltipProvider>
             <UserButton></UserButton>
         </div>

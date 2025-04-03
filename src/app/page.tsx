@@ -187,9 +187,7 @@ export default function Home() {
             </CardBody>
               </CardContainer>
           </div>
-          
       </section>
-      
     </main>
   );
 }
