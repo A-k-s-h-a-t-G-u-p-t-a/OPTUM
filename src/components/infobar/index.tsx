@@ -23,8 +23,7 @@ export default function InfoBar(){
                         <p>Contact Support</p>
                     </TooltipContent>
                 </Tooltip>
-            </TooltipProvider>
-            
+            </TooltipProvider>              
             <TooltipProvider>
                 
                 <Tooltip delayDuration={0}>

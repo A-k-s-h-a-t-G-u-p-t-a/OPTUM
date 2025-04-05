@@ -5,8 +5,8 @@ type Props = {}
 
 const page = (props: Props) => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-        <SignIn></SignIn>
+    <div>
+      <SignIn></SignIn>
     </div>
   )
 }

@@ -9,7 +9,8 @@ export async function POST(req:Request){
         console.log('✅',body);
         await db.user.upsert({
             where:{clerkId : id},
-            update:{email,
+            update:{
+                email,
                 name:first_name,
                 profileImage: image_url
             },
