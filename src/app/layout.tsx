@@ -10,6 +10,7 @@ import {
   UserButton,
 } from '@clerk/nextjs'
 import { ThemeProvider } from "@/providers/theme-provider";
+import ModalProvider from "@/providers/modal-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,7 +47,9 @@ export default function RootLayout({
               enableSystem
               disableTransitionOnChange
               >
-              {children}
+                <ModalProvider>
+                  {children}
+                </ModalProvider>
           </ThemeProvider>
       </body>
     </html>

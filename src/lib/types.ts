@@ -4,7 +4,14 @@ export const formSchema = z.object({
     email : z.string().email('Required'),
     name: z.string().min(1, 'Required'),
 })
+
+export const WorkflowFormSchema = z.object({
+  name: z.string().min(1, 'Required'),
+  description: z.string().min(1, 'Required'),
+})
+
 export type ConnectionTypes = 'Google Drive' | 'Notion' | 'Slack' | 'Discord'
+
 
 export type Connection = {
   title: ConnectionTypes
@@ -15,12 +22,3 @@ export type Connection = {
   alwaysTrue?: boolean
   slackSpecial?: boolean
 }
-// interface Connection {
-//     title: string;
-//     description: string;
-//     image: string;
-//     connectionKey: string;
-//     alwaysTrue?: boolean;
-//     accessTokenKey?: string;
-//     slackSpecial?: boolean;
-//   }
