@@ -21,7 +21,7 @@ type Props = {
 
 const Workflow = ({ description, id, name, publish }: Props) => {
   return (
-    <Card className="flex w-full items-center justify-between">
+    <Card className="flex flex-row w-full items-center justify-between">
       <CardHeader className="flex flex-col gap-4">
         <Link href={`/workflows/editor/${id}`}>
           <div className="flex flex-row gap-2">
@@ -60,7 +60,7 @@ const Workflow = ({ description, id, name, publish }: Props) => {
         >
           {publish! ? 'On' : 'Off'}
         </Label>
-        <Switch
+        <Switch 
           id="airplane-mode"
           defaultChecked={publish!}
         />
