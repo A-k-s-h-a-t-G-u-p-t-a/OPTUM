@@ -11,6 +11,7 @@ import { EditorCanvasDefaultCardTypes } from '@/lib/constants';
 import { toast } from 'sonner';
 import { v4 } from 'uuid';
 import FlowInstance from './flow-instance';
+import EditorCanvasSidebar from './editor-canvas-sidebar';
 
 type Props = {}
 const initialNodes: EditorNodeType[] = []
