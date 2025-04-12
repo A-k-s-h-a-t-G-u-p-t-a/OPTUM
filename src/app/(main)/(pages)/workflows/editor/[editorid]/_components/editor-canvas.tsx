@@ -1,7 +1,7 @@
 "use client"
 import { useEditor } from '@/providers/editor-provider';
-import React, { useCallback, useMemo, useState } from 'react'
-import { addEdge, Background, Connection, Controls, Edge, EdgeChange, MiniMap, NodeChange, ReactFlow, ReactFlowInstance } from '@xyflow/react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import { addEdge, Background, Connection, Controls, Edge, EdgeChange, MiniMap, NodeChange, ReactFlow, ReactFlowInstance, applyNodeChanges, applyEdgeChanges} from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import EditorCanvasCardSingle from './editor-canvas-card';
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from '@/components/ui/resizable';
@@ -41,7 +41,6 @@ const EditorCanvas = (props: Props) => {
 
   const onEdgesChange = useCallback(
     (changes: EdgeChange[]) =>
-      //@ts-ignore
       setEdges((eds) => applyEdgeChanges(changes, eds)),
     [setEdges]
   )
@@ -50,6 +49,13 @@ const EditorCanvas = (props: Props) => {
     (params: Edge | Connection) => setEdges((eds) => addEdge(params, eds)),
     []
   )
+
+  useEffect(()=>{
+    dispatch({
+      type: "LOAD_DATA",
+      payload:{edges , elements:nodes}
+    })
+  },[nodes,edges])
 
   const nodeTypes = useMemo(
     () => ({
